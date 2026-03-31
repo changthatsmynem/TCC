@@ -1,0 +1,138 @@
+:host {
+  display: block;
+  color: #111111;
+}
+
+.shell {
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.card {
+  width: min(100%, 770px);
+  border: 3px solid #181818;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+.topbar {
+  background: #06b545;
+  border-bottom: 3px solid #181818;
+  text-align: center;
+  font-weight: 700;
+  padding: 8px 12px;
+}
+
+.content {
+  padding: 22px 26px 28px;
+}
+
+.post,
+.comments {
+  width: min(100%, 480px);
+  margin: 0 auto;
+}
+
+.comments {
+  margin-top: 14px;
+}
+
+.profile-row,
+.comment-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #4a74c9;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+
+.meta h1,
+.meta h2,
+.meta p {
+  margin: 0;
+}
+
+.meta h1,
+.meta h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.meta p {
+  color: #666666;
+  font-size: 0.85rem;
+}
+
+.hero-image {
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+  border: 1px solid #d6d6d6;
+}
+
+.comment-form {
+  flex: 1;
+}
+
+.comment-input {
+  width: 100%;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 4px;
+  background: #d9d9d9;
+  padding: 8px 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.comment-input:focus {
+  box-shadow: 0 0 0 2px rgba(32, 92, 191, 0.25);
+}
+
+.comment-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.comment-message {
+  font-size: 1.05rem;
+  color: #111111;
+  margin-top: 2px;
+}
+
+.status {
+  margin: 18px auto;
+  width: min(100%, 480px);
+  color: #4b5563;
+  text-align: center;
+}
+
+.error {
+  margin-top: 14px;
+  color: #b42318;
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: 16px;
+  }
+
+  .post,
+  .comments,
+  .status {
+    width: 100%;
+  }
+}

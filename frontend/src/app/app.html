@@ -1,0 +1,61 @@
+<main class="shell">
+  <section class="card">
+    <header class="topbar">{{ pageTitle() }}</header>
+
+    @if (loading()) {
+      <div class="status">Loading feed...</div>
+    } @else {
+      <div class="content">
+        <section class="post">
+          <div class="profile-row">
+            <div class="avatar">{{ post().avatar }}</div>
+            <div class="meta">
+              <h1>{{ post().author }}</h1>
+              <p>{{ post().createdAt }}</p>
+            </div>
+          </div>
+
+          <img
+            class="hero-image"
+            [src]="post().imagePath"
+            alt="Reference post showing a puppy and kitten"
+          />
+        </section>
+
+        <section class="comments">
+          <div class="profile-row">
+            <div class="avatar">B</div>
+            <div class="meta comment-form">
+              <h2>Blend 285</h2>
+              <input
+                class="comment-input"
+                type="text"
+                [value]="commentDraft()"
+                (input)="updateDraft(($any($event.target).value))"
+                (keydown.enter)="submitComment()"
+                [disabled]="submitting()"
+                placeholder="Comment"
+              />
+            </div>
+          </div>
+
+          @if (errorMessage()) {
+            <p class="status error">{{ errorMessage() }}</p>
+          }
+
+          <div class="comment-list">
+            @for (comment of comments(); track comment.id) {
+              <article class="comment-item">
+                <div class="avatar">{{ comment.avatar }}</div>
+                <div class="meta">
+                  <h2>{{ comment.author }}</h2>
+                  <p class="comment-message">{{ comment.message }}</p>
+                </div>
+              </article>
+            }
+          </div>
+        </section>
+      </div>
+    }
+  </section>
+</main>
